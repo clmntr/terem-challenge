@@ -68,14 +68,16 @@ class Year extends WeatherData {
     constructor ( year ) {
         super();
         this.Year               = year;
-        this.MonthlyAggregates  = {};
+        this.MonthlyAggregates  = [];
     }
 
     addRecord ( record ) {
-        if ( !this.MonthlyAggregates[ record.month ] ) {
-            this.MonthlyAggregates[ record.month ] = new Month( record.month )
+        let month = this.MonthlyAggregates.find( item => item.Month === record.month );
+        if ( !month ) {
+            month = new Month( record.month )
+            this.MonthlyAggregates.push( month );
         }
-        this.MonthlyAggregates[ record.month ].addRecord( record );
+        month.addRecord( record );
         super.addRecord( record )
     }
 }
@@ -117,8 +119,8 @@ const reduceToYears = ( acc = [], record ) => {
 }
 
 // Function that handle the serialization
-const stringify = arg => {
-    let object = { WeatherData : arg }
+const stringify = datas => {
+    let object = { WeatherData : Object.values(datas) }
     return JSON.stringify( object, ( key, value ) => {
         if ( typeof value === 'number' ) return String( value );
         return value;
@@ -143,6 +145,7 @@ const launch = () => {
     ;
 }
 
+// ------------------------------
 // Initialize CLI
 
 program
