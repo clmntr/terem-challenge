@@ -38,12 +38,19 @@ const lateRecord  = {
 // Tests
 
 describe( 'util', () => {
-    
+
     describe( '#readCSV()', () => {
 
         it( "First argument should be a valid uri", () => {
-            const fn = () => util.readCSV();
-            expect( fn ).to.throw();
+            return util.readCSV().catch( error => {
+                assert.isDefined( error );
+            })
+        })
+
+        it( "First argument should be a valid csv file", () => {
+            return util.readCSV( 'resources/note.txt' ).catch( error => {
+                assert.isDefined( error );
+            })
         })
 
         it( "Result should be a promise", () => {

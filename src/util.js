@@ -15,14 +15,19 @@ const reduce    = ( fn, acc ) => array => array.reduce( fn, acc );
 
 // Function that parse a csv coming from a stream
 const readCSV = ( source ) => {
-    let stream = fs.createReadStream( source );
     return new Promise( (resolve, reject ) => {
-        let array = []
-        stream
-            .pipe( csv.parse({ headers : true }) )
-            .on('data', row => array.push( row ) )
-            .on('end', () => resolve( array ) )
-        ;
+        try{
+            let array = []
+            fs.createReadStream( source )
+                .pipe( csv.parse({ headers : true }) )
+                .on('error', error => reject( error ) )
+                .on('data', row => array.push( row ) )
+                .on('end', () => resolve( array ) )
+            ;
+        }
+        catch( error ) {
+            reject( error )
+        }
     });
 }
 
@@ -67,6 +72,7 @@ const launch = ( config ) => {
             .then( reduce( reduceToYears, {} ) )
             .then( stringify )
             .then( outputResult( config ) )
+            .catch( error => console.log( error ) )
         ;
     }
 }
