@@ -12,10 +12,10 @@ Or :
 npm install
 ```
 
-## Launch the challenge tool
+## Launch the tests
 
 ```
-node src/index.js --help
+npm run test
 ```
 
 ## Launch the challenge tool in default mode
@@ -23,3 +23,17 @@ node src/index.js --help
 ```
 npm run tool
 ```
+
+## Launch the challenge tool with specific source and destination
+
+```
+node src/index.js -s 'path/to/source' -d 'path/to/dest'
+```
+
+
+## Launch the challenge tool with the help
+
+```
+node src/index.js --help
+```
+

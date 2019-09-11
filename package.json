@@ -4,7 +4,7 @@
   "description": "Terem technical test",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --recursive",
     "init": "npm install",
     "tool": "node src/index.js"
   },
@@ -17,5 +17,9 @@
     "commander": "^3.0.1",
     "fast-csv": "^3.4.0",
     "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
   }
 }

@@ -1,0 +1,8 @@
+Product code,Bureau of Meteorology station number,Year,Month,Day,Rainfall amount (millimetres),Period over which rainfall was measured (days),Quality
+IDCJAC0009,066062,2017,01,01,,,
+IDCJAC0009,066062,2018,01,11,,,
+IDCJAC0009,066062,2018,02,11,0,,Y
+IDCJAC0009,066062,2018,02,12,10.0,,Y
+IDCJAC0009,066062,2019,02,11,0,,Y
+IDCJAC0009,066062,2019,02,12,10.0,,Y
+IDCJAC0009,066062,2119,12,13,10.0,1,Y
