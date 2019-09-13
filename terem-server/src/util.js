@@ -81,6 +81,7 @@ const launch = ( config ) => {
 // Exports
 
 module.exports = {
+    reduce          : reduce,
     readCSV         : readCSV,
     reduceToYears   : reduceToYears,
     stringify       : stringify,

@@ -2,11 +2,12 @@
   "name": "terem-challenge",
   "version": "1.0.0",
   "description": "Terem technical test",
-  "main": "src/index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "mocha --recursive",
     "init": "npm install",
-    "tool": "node src/index.js"
+    "tool": "node src/tool.js",
+    "server": "node src/server.js"
   },
   "keywords": [
     "Terem"
@@ -15,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^3.0.1",
+    "express": "^4.17.1",
     "fast-csv": "^3.4.0",
     "moment": "^2.24.0"
   },

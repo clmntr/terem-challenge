@@ -1,4 +1,4 @@
-# Terem challenge
+# Terem challenge server
 
 ## Installation
 
@@ -18,6 +18,16 @@ npm install
 npm run test
 ```
 
+
+## Launch the server
+
+Server is running on port 3001 by default. Config will come later.
+
+```
+npm run server
+```
+
+
 ## Launch the challenge tool in default mode
 
 ```
@@ -27,13 +37,13 @@ npm run tool
 ## Launch the challenge tool with specific source and destination
 
 ```
-node src/index.js -s 'path/to/source' -d 'path/to/dest'
+node src/tool.js -s 'path/to/source' -d 'path/to/dest'
 ```
 
 
 ## Launch the challenge tool with the help
 
 ```
-node src/index.js --help
+node src/tool.js --help
 ```
 
