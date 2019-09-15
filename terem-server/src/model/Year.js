@@ -19,10 +19,10 @@ module.exports = class Year extends WeatherData {
     addRecord ( record ) {
         let month = this.MonthlyAggregates.find( item => item.Month === record.month );
         if ( !month ) {
-            month = new Month( record.month )
+            month = new Month( record.month );
             this.MonthlyAggregates.push( month );
         }
         month.addRecord( record );
-        super.addRecord( record )
+        super.addRecord( record );
     }
 }

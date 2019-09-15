@@ -1,4 +1,10 @@
+// ------------------------------
+// Imports
+
 const util = require('../../util')
+
+// ------------------------------
+// API
 
 exports.getWeatherData = function( req, res ) {
     model

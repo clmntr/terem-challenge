@@ -1,4 +1,10 @@
-let weatherDataCtrl = require('./weatherData.controller');
+// ------------------------------
+// Imports
+
+const weatherDataCtrl = require('./weatherData.controller');
+
+// ------------------------------
+// Routes
 
 module.exports = ( app ) => {
 
